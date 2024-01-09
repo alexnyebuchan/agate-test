@@ -1,3 +1,3 @@
-import { createContext, useReducer  } from 'react';
+import { createContext  } from 'react';
 
 export const CountryContext = createContext();

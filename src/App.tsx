@@ -10,13 +10,14 @@ import ContinentList from './pages/ContinentList'
 import CountryList from './pages/CountryList'
 
 import { CountryContext } from "./context/CountryContext.tsx"
-import  CountryReducer  from "./context/CountryReducer.tsx"
+import { CountryReducer}  from "./context/CountryReducer.tsx"
 
 
 function App() {
   const initialState = {
     selectedCountry: '', 
   };
+
   const [state, dispatch] = useReducer(CountryReducer, initialState);
 
   return (
