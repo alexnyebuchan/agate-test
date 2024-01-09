@@ -42,7 +42,7 @@ const InfoBar = () => {
 
   return (
     <div className={styles.container}>
-      <h2>{country}: </h2>
+      <h2>{country} </h2>
       <div className={styles.infoContainer}>
       <p>Capitol city: {capitol}</p>
       <p>Languages: {languages.map((lang, index) => (

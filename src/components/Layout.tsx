@@ -3,6 +3,7 @@ import Footer from "./Footer"
 import InfoBar from "./InfoBar"
 import Nav from "./Nav"
 import { CountryContext } from "../context/CountryContext";
+import SearchBar from "./SearchBar";
 
 
 const Layout = ({children}) => {
@@ -12,6 +13,7 @@ const Layout = ({children}) => {
   return (
     <div>
         <Nav />
+        <SearchBar />
         {state.selectedCountry !== '' && (<InfoBar />)}
         {children}
         <Footer />
