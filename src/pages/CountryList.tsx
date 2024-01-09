@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import { useParams } from "react-router-dom"
 import continentData from '../data/byContinent.json'
+
+import { CountryContext } from "../context/CountryContext"
 
 import styles from '../styles/CountryList.module.scss'
 
@@ -8,6 +10,7 @@ import styles from '../styles/CountryList.module.scss'
 
 const CountryList = () => {
     const {countryId} = useParams()
+    const { dispatch } = useContext(CountryContext);
     const [countries, setCountries] = useState([])
     
     useEffect(() => {
@@ -19,13 +22,17 @@ const CountryList = () => {
         setCountries(filteredCountries)
     }
 
+    function handleClick(selected){
+        dispatch({type:'SET_SELECTED_COUNTRY', payload: selected.country})
+    }
+
 
   return (
     <div className={styles.container}>
         <h1>Countries in {countryId}</h1>
         <ul>
-            {countries.map((country) => (
-                <li>{country.country}</li>
+            {countries.map((country, index) => (
+                <li key={index} onClick={() => handleClick(country)}>{country.country}</li>
             ))}
         </ul>
     </div>

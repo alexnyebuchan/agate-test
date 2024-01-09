@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useReducer, useState } from 'react'
 import continentData from './data/byContinent.json'
 import capitolData from './data/byCapitol.json'
 import languagesData from './data/byLanguages.json'
@@ -9,15 +9,20 @@ import Map from './pages/Map'
 import ContinentList from './pages/ContinentList'
 import CountryList from './pages/CountryList'
 
-function App() {
-  // console.log(capitolData)
-  // console.log(continentData)
-  // console.log(languagesData)
+import { CountryContext } from "./context/CountryContext.tsx"
+import  CountryReducer  from "./context/CountryReducer.tsx"
 
+
+function App() {
+  const initialState = {
+    selectedCountry: '', 
+  };
+  const [state, dispatch] = useReducer(CountryReducer, initialState);
 
   return (
     <>
     <Router>
+      <CountryContext.Provider value={{ state, dispatch }}>
       {/* Loading */}
       <Layout>
         <Routes>
@@ -27,6 +32,7 @@ function App() {
           <Route path="/continents/:countryId" element={<CountryList/>}></Route>
         </Routes>
       </Layout>
+      </CountryContext.Provider>
     </Router>
     </>
   )
