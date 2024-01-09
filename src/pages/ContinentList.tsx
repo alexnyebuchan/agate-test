@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import continentData from '../data/byContinent.json'
 import { Link } from 'react-router-dom';
 
+import styles from '../styles/ContinentList.module.scss'
+
+
 const ContinentList = () => {
     const [continents, setContinents] = useState([])
 
@@ -19,11 +22,13 @@ const ContinentList = () => {
     }
 
   return (
-    <div>
+    <div className={styles.container}>
         <h1>Please Select a Continent.</h1>
-        {continents.map((continent) => (
-            <Link to={`/continents/${continent}`} ><p>{continent}</p></Link>
+        <div className={styles.countryList}>
+        {continents.map((continent, index) => (
+            <Link key={index} to={`/continents/${continent}`} >{continent}</Link>
         ))}
+        </div>
     </div>
   )
 }
