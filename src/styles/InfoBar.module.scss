@@ -1,0 +1,19 @@
+.container {
+    background-color: gold;
+    display: flex;
+    justify-content: left;
+    padding-right: 600px;
+    padding-left: 200px;
+    align-items: center;
+    min-height: 100px;
+    h2{
+        font-size: 21px;
+    }
+    p {
+        font-size: 14px;
+    }
+}
+
+h2, .infoContainer {
+    flex: 1;
+}

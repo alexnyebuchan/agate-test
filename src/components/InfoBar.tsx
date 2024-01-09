@@ -4,6 +4,9 @@ import { CountryContext } from "../context/CountryContext.tsx"
 import capitolData from '../data/byCapitol.json'
 import languageData from '../data/byLanguages.json'
 
+import styles from '../styles/InfoBar.module.scss'
+
+
 
 const InfoBar = () => {
   const [capitol, setCapitol] = useState('')
@@ -21,7 +24,7 @@ const InfoBar = () => {
     if(filteredForCapitol[0].city) {
       setCapitol(filteredForCapitol[0].city)
     } else {
-      setCapitol(`${country} has no capitol.`)
+      setCapitol(`${country} has no capitol listed.`)
     }
     
   }
@@ -31,19 +34,21 @@ const InfoBar = () => {
     if(filteredForLangs.length > 0) {
       setLanguages(filteredForLangs[0].languages)
     } else {
-      setLanguages([`${country} has no language`])
+      setLanguages([`${country} has no language listed.`])
     }
   }
 
   console.log(languages)
 
   return (
-    <div>
-      <h2>{country}</h2>
+    <div className={styles.container}>
+      <h2>{country}: </h2>
+      <div className={styles.infoContainer}>
       <p>Capitol city: {capitol}</p>
       <p>Languages: {languages.map((lang, index) => (
         <span key={index}>{lang}{index === languages.length -1 ? "" : ', '}</span>
       ))}</p>
+      </div>
     </div>
   )
 }
