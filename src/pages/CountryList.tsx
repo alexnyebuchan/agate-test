@@ -25,6 +25,7 @@ const CountryList: React.FC = () => {
 
     function handleClick(selected){
         dispatch({type:'SET_SELECTED_COUNTRY', payload: selected.country})
+        window.scroll(0, 240);
     }
 
 

@@ -31,6 +31,7 @@ const Search: React.FC = () => {
 
       function handleClick(selected: any){
         dispatch({type:'SET_SELECTED_COUNTRY', payload: selected.country})
+        window.scroll(0, 240);
     }
 
   return (
