@@ -5,12 +5,10 @@ import { Link } from 'react-router-dom';
 import styles from '../styles/ContinentList.module.scss'
 import { CountryContext } from '../context/CountryContext';
 
-
 const ContinentList: React.FC = () => {
-    const [continents, setContinents] = useState([])
+    const [continents, setContinents] = useState<string[]>([])
     const { dispatch } = useContext(CountryContext);
 
-    console.log(continentData)
     useEffect(() => {
         extractContinent(continentData)
     }, [])
@@ -24,7 +22,7 @@ const ContinentList: React.FC = () => {
         setContinents([...continentSet])
     }
 
-    function handleClick(continent){
+    function handleClick(continent: string){
         dispatch({type:'SET_SELECTED_CONTINENT', payload: continent})
     }
 

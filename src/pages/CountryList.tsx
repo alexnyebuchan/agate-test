@@ -12,13 +12,13 @@ import BackButton from "../components/BackButton"
 const CountryList: React.FC = () => {
     const {continentId} = useParams()
     const { dispatch } = useContext(CountryContext);
-    const [countries, setCountries] = useState([])
+    const [countries, setCountries] = useState<string[]>([])
     
     useEffect(() => {
         extractCountries(continentId)
     }, [])
 
-    function extractCountries(id) {
+    function extractCountries(id:string) {
         const filteredCountries = continentData.filter((country) => country.continent === id)
         setCountries(filteredCountries)
     }

@@ -6,12 +6,11 @@ import { CountryContext } from "../context/CountryContext";
 import SearchBar from "./SearchBar";
 import {CountryContextType} from '../utils/Types'
 
+import { ComponentProps } from '../utils/Types';
 
-interface LayoutProps {
-  children: ReactNode;
-}
 
-const Layout: React.FC<LayoutProps> = ({children}) => {
+
+const Layout: React.FC<ComponentProps> = ({children}) => {
     const { state } = useContext(CountryContext) as { state: CountryContextType };
 
 

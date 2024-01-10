@@ -9,8 +9,8 @@ import styles from '../styles/InfoBar.module.scss'
 import {CountryContextType} from '../utils/Types'
 
 const InfoBar: React.FC = () => {
-  const [capitol, setCapitol] = useState('')
-  const [languages, setLanguages] = useState([])
+  const [capitol, setCapitol] = useState<string>('')
+  const [languages, setLanguages] = useState<string[]>([])
   const { state } = useContext(CountryContext) as { state: CountryContextType };
   const country = state.selectedCountry;
 
