@@ -8,7 +8,7 @@ import styles from '../styles/CountryList.module.scss'
 
 
 
-const CountryList = () => {
+const CountryList: React.FC = () => {
     const {countryId} = useParams()
     const { dispatch } = useContext(CountryContext);
     const [countries, setCountries] = useState([])

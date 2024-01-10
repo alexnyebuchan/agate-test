@@ -1,5 +1,5 @@
 
-const Map = () => {
+const Map: React.FC = () => {
   return (
     <div>Map</div>
   )

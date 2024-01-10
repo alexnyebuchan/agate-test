@@ -8,7 +8,7 @@ import styles from '../styles/InfoBar.module.scss'
 
 
 
-const InfoBar = () => {
+const InfoBar: React.FC = () => {
   const [capitol, setCapitol] = useState('')
   const [languages, setLanguages] = useState([])
   const { state } = useContext(CountryContext);
@@ -38,10 +38,10 @@ const InfoBar = () => {
     }
   }
 
-  console.log(languages)
-
   return (
     <div className={styles.container}>
+      <p  
+      >Currently selected country: </p>
       <h2>{country} </h2>
       <div className={styles.infoContainer}>
       <p>Capitol city: {capitol}</p>
@@ -49,7 +49,7 @@ const InfoBar = () => {
         <span key={index}>{lang}{index === languages.length -1 ? "" : ', '}</span>
       ))}</p>
       </div>
-    </div>
+    </div> 
   )
 }
 

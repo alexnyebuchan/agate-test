@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import styles from '../styles/ContinentList.module.scss'
 
 
-const ContinentList = () => {
+const ContinentList: React.FC = () => {
     const [continents, setContinents] = useState([])
 
     useEffect(() => {

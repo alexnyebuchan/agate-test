@@ -6,7 +6,7 @@ import { CountryContext } from "../context/CountryContext";
 import SearchBar from "./SearchBar";
 
 
-const Layout = ({children}) => {
+const Layout: React.FC = ({children}) => {
     const { state } = useContext(CountryContext);
 
 

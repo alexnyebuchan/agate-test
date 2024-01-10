@@ -1,7 +1,7 @@
 import { NavLink  } from 'react-router-dom'
 import styles from '../styles/Nav.module.scss'
 
-const Nav = () => {
+const Nav: React.FC = () => {
   return (
     <nav className={styles.container}>
         <div><NavLink  to='/' >Logo</NavLink ></div>
