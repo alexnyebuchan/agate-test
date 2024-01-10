@@ -31,3 +31,23 @@
 .icon {
     height: 100px;
 }
+
+@media (max-width: 1100px) {
+    .container{
+        padding-inline: 100px;
+
+    }
+}
+
+@media (max-width: 800px) {
+    .container{
+        padding-top: 20px;
+        flex-direction: column;
+        height: 307px;
+        ul {
+            li {
+                padding-inline: 70px; 
+            }
+        }
+    }
+}

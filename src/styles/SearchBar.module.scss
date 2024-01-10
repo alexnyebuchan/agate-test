@@ -33,3 +33,12 @@
     height: 20px;
     padding: 10px;
 }
+
+@media (max-width: 1100px) {
+    .container{
+        input {
+            width: 60%;
+        }
+
+    }
+}

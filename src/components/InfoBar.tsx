@@ -40,9 +40,10 @@ const InfoBar: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <p  
-      >Currently selected country: </p>
-      <h2>{country} </h2>
+      <div className={styles.header}>
+        <p className={styles.currentlySelected}>Currently selected: </p>
+        <h2>{country} </h2>
+      </div>
       <div className={styles.infoContainer}>
       <p><b>Capitol city:</b> {capitol}</p>
       <p><b>Languages:</b> {languages.map((lang, index) => (
