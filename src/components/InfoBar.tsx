@@ -6,12 +6,12 @@ import languageData from '../data/byLanguages.json'
 
 import styles from '../styles/InfoBar.module.scss'
 
-
+import {CountryContextType} from '../utils/Types'
 
 const InfoBar: React.FC = () => {
   const [capitol, setCapitol] = useState('')
   const [languages, setLanguages] = useState([])
-  const { state } = useContext(CountryContext);
+  const { state } = useContext(CountryContext) as { state: CountryContextType };
   const country = state.selectedCountry;
 
   useEffect(() => {
@@ -19,8 +19,8 @@ const InfoBar: React.FC = () => {
     getLanguages(country)
   }, [state])
 
-  function getCapitol(id){
-    const filteredForCapitol = capitolData.filter((c) => c.country === country)
+  function getCapitol(id: string){
+    const filteredForCapitol = capitolData.filter((c) => c.country === id)
     if(filteredForCapitol[0].city) {
       setCapitol(filteredForCapitol[0].city)
     } else {
@@ -29,8 +29,8 @@ const InfoBar: React.FC = () => {
     
   }
 
-  function getLanguages(id){
-    const filteredForLangs = languageData.filter((c) => c.country === country)
+  function getLanguages(id: string){
+    const filteredForLangs = languageData.filter((c) => c.country === id)
     if(filteredForLangs.length > 0) {
       setLanguages(filteredForLangs[0].languages)
     } else {

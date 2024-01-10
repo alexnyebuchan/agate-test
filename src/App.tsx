@@ -1,7 +1,4 @@
-import { useReducer, useState } from 'react'
-import continentData from './data/byContinent.json'
-import capitolData from './data/byCapitol.json'
-import languagesData from './data/byLanguages.json'
+import { useReducer } from 'react'
 
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Layout from './components/Layout'
@@ -21,6 +18,7 @@ function App() {
 
   const initialState = {
     selectedCountry: '', 
+    selectedContinent: '', 
   };
   const [state, dispatch] = useReducer(CountryReducer, initialState);
 

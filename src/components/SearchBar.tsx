@@ -5,7 +5,8 @@ import styles from '../styles/SearchBar.module.scss';
 import { useDebounce } from '../utils/useDebounce';
 import { useEffect, useState } from 'react';
 
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 // Search through capitol data as it includes both country and capitol name. Any field. If anything is in the search bar, display the search page.
 const SearchBar: React.FC = () => {
@@ -38,7 +39,8 @@ const SearchBar: React.FC = () => {
 
   return (
     <div className={styles.container}>
-        <input onChange={handleInput} value={searchValue} type="text" placeholder="Search for country or capital..."/>
+      <div className={styles.iconContainer}><FontAwesomeIcon className={styles.icon} icon={faSearch} /></div>
+      <input onChange={handleInput} value={searchValue} type="text" placeholder="Search for country or capital..."/>
     </div>
   )
 }

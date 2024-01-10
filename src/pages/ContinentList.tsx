@@ -10,7 +10,7 @@ const ContinentList: React.FC = () => {
     const [continents, setContinents] = useState([])
     const { dispatch } = useContext(CountryContext);
 
-
+    console.log(continentData)
     useEffect(() => {
         extractContinent(continentData)
     }, [])
