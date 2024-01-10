@@ -1,9 +1,11 @@
+@import './colours.module';
+
 .container {
     display: flex;
     justify-content: center;
     padding: 20px;
     align-items: center;
-    background-color: blue;
+    background-color: $blue;
     input {
         border: none;
         padding: 10px;

@@ -24,6 +24,7 @@ const ContinentList: React.FC = () => {
   return (
     <div className={styles.container}>
         <h1>Please Select a Continent.</h1>
+        <h3>Navigate to find country's capitol cities and languages by continent.</h3>
         <div className={styles.countryList}>
         {continents.map((continent, index) => (
             <Link key={index} to={`/continents/${continent}`} >{continent}</Link>

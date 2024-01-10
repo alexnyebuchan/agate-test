@@ -2,18 +2,18 @@ import { NavLink  } from 'react-router-dom'
 import styles from '../styles/Nav.module.scss'
 
 const Nav: React.FC = () => {
+  const navLinkStyle = (isActive) => ({
+    backgroundColor: isActive ? "#6B7C93" : "",
+    color: isActive ? "#FFFFFF" : "",
+  });
+
+
   return (
     <nav className={styles.container}>
         <div><NavLink  to='/' >Logo</NavLink ></div>
         <ul>
-            <li><NavLink 
-                style={({ isActive }) => {
-                    return {backgroundColor: isActive ? "red" : "",};
-                    }}  to='/map' 
-                >Map</NavLink ></li>
-            <li><NavLink style={({ isActive }) => {
-                    return {backgroundColor: isActive ? "red" : "",};
-                }}  to='/continents' >List</NavLink ></li>
+            <NavLink style={({ isActive }) => navLinkStyle(isActive)}  to='/map'><li>Map</li></NavLink >
+            <NavLink style={({ isActive }) => navLinkStyle(isActive)}  to='/continents' ><li>List</li></NavLink >
         </ul>
     </nav>
   )

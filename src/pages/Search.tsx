@@ -3,9 +3,11 @@ import { useParams } from "react-router-dom"
 import capitolData from '../data/byCapitol.json'
 import { useContext, useEffect, useState } from "react"
 
+import BackButton from "../components/BackButton"
+
 import { CountryContext } from "../context/CountryContext"
 
-import styles from '../styles/CountryList.module.scss'
+import styles from '../styles/Search.module.scss'
 
 
 const Search: React.FC = () => {
@@ -39,6 +41,7 @@ const Search: React.FC = () => {
                 <li key={index} onClick={() => handleClick(country)}>{country.country}</li>
             ))}
         </ul>
+        <BackButton />
     </div>
   )
 }

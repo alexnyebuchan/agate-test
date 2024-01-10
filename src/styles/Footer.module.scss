@@ -1,7 +1,11 @@
+@import './colours.module';
+
+
 .container {
     position: fixed;
     text-align: center;
     bottom: 0;
     width: 100%;
-    background-color: yellow;
+    background-color: $blue;
+    color: $white;
 }

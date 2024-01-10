@@ -5,6 +5,7 @@ import continentData from '../data/byContinent.json'
 import { CountryContext } from "../context/CountryContext"
 
 import styles from '../styles/CountryList.module.scss'
+import BackButton from "../components/BackButton"
 
 
 
@@ -29,12 +30,13 @@ const CountryList: React.FC = () => {
 
   return (
     <div className={styles.container}>
-        <h1>Countries in {countryId}</h1>
+        <h1>Countries in {countryId}:</h1>
         <ul>
             {countries.map((country, index) => (
                 <li key={index} onClick={() => handleClick(country)}>{country.country}</li>
             ))}
         </ul>
+        <BackButton />
     </div>
   )
 }

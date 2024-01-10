@@ -1,17 +1,29 @@
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import styles from '../styles/SearchBar.module.scss';
 
 import { useDebounce } from '../utils/useDebounce';
+import { useEffect, useState } from 'react';
 
 
 
 // Search through capitol data as it includes both country and capitol name. Any field. If anything is in the search bar, display the search page.
 const SearchBar: React.FC = () => {
-  let navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState('');
+  const navigate = useNavigate();
+  const {pathname} = useLocation();
+
+  
+
+  useEffect(() => {
+    if(!pathname.startsWith('/search/')){
+      setSearchValue('')
+    }
+  })
 
   function handleInput(e:any) {
         const value = e.target.value
+        setSearchValue(value)
         navigateToSearch(value)
     }
 
@@ -26,7 +38,7 @@ const SearchBar: React.FC = () => {
 
   return (
     <div className={styles.container}>
-        <input onChange={handleInput} type="text" placeholder="Search for country or capital..."/>
+        <input onChange={handleInput} value={searchValue} type="text" placeholder="Search for country or capital..."/>
     </div>
   )
 }

@@ -1,5 +1,9 @@
+
+@import './colours.module';
+
 .container {
-    background-color: gold;
+    background-color: $black;
+    color: $white;
     display: flex;
     justify-content: left;
     padding-right: 900px;

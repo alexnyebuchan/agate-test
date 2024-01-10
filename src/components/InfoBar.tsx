@@ -44,8 +44,8 @@ const InfoBar: React.FC = () => {
       >Currently selected country: </p>
       <h2>{country} </h2>
       <div className={styles.infoContainer}>
-      <p>Capitol city: {capitol}</p>
-      <p>Languages: {languages.map((lang, index) => (
+      <p><b>Capitol city:</b> {capitol}</p>
+      <p><b>Languages:</b> {languages.map((lang, index) => (
         <span key={index}>{lang}{index === languages.length -1 ? "" : ', '}</span>
       ))}</p>
       </div>
