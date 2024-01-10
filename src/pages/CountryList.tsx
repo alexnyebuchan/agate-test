@@ -10,12 +10,12 @@ import BackButton from "../components/BackButton"
 
 
 const CountryList: React.FC = () => {
-    const {countryId} = useParams()
+    const {continentId} = useParams()
     const { dispatch } = useContext(CountryContext);
     const [countries, setCountries] = useState([])
     
     useEffect(() => {
-        extractCountries(countryId)
+        extractCountries(continentId)
     }, [])
 
     function extractCountries(id) {
@@ -30,7 +30,7 @@ const CountryList: React.FC = () => {
 
   return (
     <div className={styles.container}>
-        <h1>Countries in {countryId}:</h1>
+        <h1>Countries in {continentId}:</h1>
         <ul>
             {countries.map((country, index) => (
                 <li key={index} onClick={() => handleClick(country)}>{country.country}</li>

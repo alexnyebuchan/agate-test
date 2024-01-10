@@ -35,7 +35,7 @@ function App() {
             <Route path="/map" element={<Map/>}></Route>
             <Route path={"/search/:searchId"} element={<Search/>}></Route>
             <Route path="/continents" element={<ContinentList/>}></Route>
-            <Route path="/continents/:countryId" element={<CountryList/>}></Route>
+            <Route path="/continents/:continentId" element={<CountryList/>}></Route>
           </Routes>
         </Layout>
       </CountryContext.Provider>

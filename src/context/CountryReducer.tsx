@@ -5,6 +5,11 @@ export const CountryReducer = (state, action) => {
             ...state,
             selectedCountry: action.payload,
         };
+      case 'SET_SELECTED_CONTINENT':
+          return {
+            ...state,
+            selectedContinent: action.payload,
+          };
       default:
         return state;
     }
