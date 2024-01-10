@@ -8,6 +8,8 @@ There is `search panel` beneath the navigation, which filters through either cap
 
 Currently I am integratng a `Debounce and Map feature`, the latter allowing the user to click on countries on a map graphic, which also provides city and language data same as the list view, using the context. This is being done on a seperate git branch: https://github.com/alexnyebuchan/agate-test/tree/debounce-and-map-integration
 
+All styling done from scratch using the module system and sass.
+
 # Questions
 
 How would you optimize the performance of the list rendering, in these 2 or 3 combined lists.
