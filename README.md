@@ -6,7 +6,7 @@ Once a country is clicked, an information panel appears 'InfoBar.tsx' which `dis
 
 There is `search panel` beneath the navigation, which filters through either capitols or countries with whatever is in the input. 
 
-Currently I am integratng a `Debounce and Map feature`, the latter allowing the user to click on countries on a map graphic, which also provides city and language data same as the list view, using the context. This is being done on a seperate git branch: https://github.com/alexnyebuchan/agate-test/tree/debounce-and-map-integration
+Currently I am integratng a `Debounce and Map feature`, the latter allowing the user to click on countries on a map graphic, which also provides city and language data same as the list view, using the context. This is being done on a seperate git branch: https://github.com/alexnyebuchan/agate-test/tree/debounce-and-map-integration](https://github.com/alexnyebuchan/agate-test/tree/map-integration
 
 All styling done from scratch using the module system and sass.
 
