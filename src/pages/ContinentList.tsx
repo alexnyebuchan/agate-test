@@ -7,7 +7,7 @@ import { CountryContext } from '../context/CountryContext';
 
 const ContinentList: React.FC = () => {
     const [continents, setContinents] = useState<string[]>([])
-    const { dispatch } = useContext(CountryContext);
+    const { dispatch } = useContext(CountryContext) ;
 
     useEffect(() => {
         extractContinent(continentData)

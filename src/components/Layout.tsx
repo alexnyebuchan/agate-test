@@ -1,4 +1,4 @@
-import { ReactNode, useContext } from "react";
+import { useContext } from "react";
 import Footer from "./Footer"
 import InfoBar from "./InfoBar"
 import Nav from "./Nav"
