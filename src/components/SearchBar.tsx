@@ -2,7 +2,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 import styles from '../styles/SearchBar.module.scss';
 
-import { useDebounce } from '../utils/useDebounce';
 import { useEffect, useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
