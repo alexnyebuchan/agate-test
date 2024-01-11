@@ -22,7 +22,11 @@ How does TypeScript enhance the development experience in a React application?
 - Firstly, it helps with `debugging`, as errors are shown prior to running the development server or deployment. IDE's like VS Code make this very easy. Secondly, it is easier to code `collaboratively`, as you can see what types their variables should be, bettering your understanding of their components and avoiding errors in the process. 
 
 How would you handle pagination or infinite scrolling for a large list of countries? Assume only 10 per page are allowed.
-- I would create a variable to store the amount of countries per page (10). Then calculate the total pages by dividing the `countries.length` by this number. Once this is done, `slice or filter` through the countries array to extract only the relevant elements for the selected page. Change the map to only iterate over this variable in the return. Create a useState() to handle which page is selected, and a button in the return which can increment or decrement the page number. 
+- I would create a variable to store the amount of countries per page (10). Then calculate the total pages by dividing the `countries.length` by this number. Once this is done, `slice or filter` through the countries array to extract only the relevant elements for the selected page. Change the map to only iterate over this variable in the return. Create a useState() to handle which page is selected, and a button in the return which can increment or decrement the page number.
+
+What are some advanced TypeScript features that could be useful in this project?
+
+- In this project, I used ReactNode and Dispatch as types for my interfaces, to bring robustness and clarity to my prop Types and context Types. Perhaps to improve efficiency and make the code more `DRY` I could introduce generic types <T> and reuse some of these interfaces, rather than make new ones each time. 
 
 Can you explain how context API or Redux can be integrated into this project for state management?
 - For the sake of this question, I implemented two contexts and one reducer to illustrate my knowledge of Context API's (please see `context folder`). This means I can access country information at any part of the app. For instance, in the Nav there is a globe icon, which changes whenever a new continent is clicked. The new continent name is dispatched to the reducer in the component, retrieved in the contex in the nav. I have used Redux, but would only consider for much larger projects - YAGNI.
