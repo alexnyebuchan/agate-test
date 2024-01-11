@@ -6,12 +6,11 @@ import languageData from '../data/byLanguages.json'
 
 import styles from '../styles/InfoBar.module.scss'
 
-import {CountryContextType} from '../utils/Types'
 
 const InfoBar: React.FC = () => {
   const [capitol, setCapitol] = useState<string>('')
   const [languages, setLanguages] = useState<string[]>([])
-  const { state } = useContext(CountryContext) as { state: CountryContextType };
+  const { state } = useContext(CountryContext);
   const country = state.selectedCountry;
 
   useEffect(() => {

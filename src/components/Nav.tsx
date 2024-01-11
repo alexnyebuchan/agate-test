@@ -4,7 +4,6 @@ import { CountryContext } from "../context/CountryContext.tsx"
 import { NavLink  } from 'react-router-dom'
 import styles from '../styles/Nav.module.scss'
 
-import {CountryContextType} from '../utils/Types'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEarthEurope, faEarthAsia, faEarthAfrica, faEarthOceania, faEarthAmericas } from '@fortawesome/free-solid-svg-icons'
@@ -12,7 +11,7 @@ import { faEarthEurope, faEarthAsia, faEarthAfrica, faEarthOceania, faEarthAmeri
 
 const Nav: React.FC = () => {
   const [faType, setFaType] = useState(faEarthEurope)
-  const { state } = useContext(CountryContext) as { state: CountryContextType }; 
+  const { state } = useContext(CountryContext); 
 
 
   useEffect(() => {

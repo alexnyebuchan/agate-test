@@ -6,20 +6,20 @@ import { useContext, useEffect, useState } from "react"
 import BackButton from "../components/BackButton"
 
 import { CountryContext } from "../context/CountryContext"
-import {CountryContextType} from '../utils/Types'
 
 
 import styles from '../styles/Search.module.scss'
+import { CountriesByCapitol } from "../utils/Types"
 
 
 const Search: React.FC = () => {
-    const { searchId } = useParams()
-    const { dispatch } = useContext(CountryContext) as { state: CountryContextType }; 
-    const [countries, setCountries] = useState([])
+    const { searchId } = useParams<string>()
+    const { dispatch } = useContext(CountryContext); 
+    const [countries, setCountries] = useState<CountriesByCapitol[]>()
 
     useEffect(() => {
       if(searchId) {
-        const results = capitolData.filter((item) => 
+        const results:CountriesByCapitol[] = capitolData.filter((item) => 
         item.country.toLowerCase().includes(searchId.toLowerCase()) || 
         (item.city !== null && item.city.toLowerCase().includes(searchId.toLowerCase())))
         setCountries(results)
@@ -38,7 +38,7 @@ const Search: React.FC = () => {
     <div className={styles.container}>
         <h1>Countries with a name or capitol including: {searchId}</h1>
         <ul>
-            {countries.map((country, index) => (
+            {countries && countries.map((country, index) => (
                 <li key={index} onClick={() => handleClick(country)}>{country.country}</li>
             ))}
         </ul>

@@ -12,21 +12,19 @@ import { CountryReducer}  from "./context/CountryReducer.tsx"
 
 
 
-
-
 function App() {
-
   const initialState = {
-    selectedCountry: '', 
-    selectedContinent: '', 
+        selectedCountry: '',
+        selectedContinent: '',
   };
+
   const [state, dispatch] = useReducer(CountryReducer, initialState);
 
   return (
     <>
     <Router>
       <CountryContext.Provider value={{ state, dispatch }}>
-      {/* Loading */}
+      {/* TODO Loading */}
         <Layout>
           <Routes>
             <Route path="/*" element={<Navigate to="/continents" replace />}></Route>

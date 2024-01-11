@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import styles from '../styles/ContinentList.module.scss'
 import { CountryContext } from '../context/CountryContext';
+import { CountriesbyContinent } from '../utils/Types';
 
 const ContinentList: React.FC = () => {
     const [continents, setContinents] = useState<string[]>([])
@@ -13,8 +14,8 @@ const ContinentList: React.FC = () => {
         extractContinent(continentData)
     }, [])
 
-    function extractContinent(countries) {
-        const continentSet = new Set()
+    function extractContinent(countries: CountriesbyContinent[]) {
+        const continentSet = new Set<string>()
 
         countries.forEach((country) => {
             continentSet.add(country.continent)

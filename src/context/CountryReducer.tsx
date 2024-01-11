@@ -1,4 +1,6 @@
-export const CountryReducer = (state: object, action: any) => {
+import { State } from "../utils/Types";
+
+export const CountryReducer = (state: State, action: any) => {
     switch (action.type) {
       case 'SET_SELECTED_COUNTRY':
         return {

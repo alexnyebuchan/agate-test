@@ -7,15 +7,18 @@ import { CountryContext } from "../context/CountryContext"
 import styles from '../styles/CountryList.module.scss'
 import BackButton from "../components/BackButton"
 
-
+import {CountriesbyContinent} from '../utils/Types'
 
 const CountryList: React.FC = () => {
-    const {continentId} = useParams()
+    const {continentId} = useParams<string>()
     const { dispatch } = useContext(CountryContext);
-    const [countries, setCountries] = useState<string[]>([])
+    const [countries, setCountries] = useState<CountriesbyContinent[]>()
+    console.log(countries)
     
     useEffect(() => {
-        extractCountries(continentId)
+        if(continentId){
+            extractCountries(continentId)
+        }
     }, [])
 
     function extractCountries(id:string) {
@@ -23,7 +26,10 @@ const CountryList: React.FC = () => {
         setCountries(filteredCountries)
     }
 
-    function handleClick(selected){
+   
+
+    function handleClick(selected: CountriesbyContinent){
+        console.log(selected)
         dispatch({type:'SET_SELECTED_COUNTRY', payload: selected.country})
         window.scroll(0, 240);
     }
@@ -33,8 +39,8 @@ const CountryList: React.FC = () => {
     <div className={styles.container}>
         <h1>Countries in {continentId}:</h1>
         <ul>
-            {countries.map((country, index) => (
-                <li key={index} onClick={() => handleClick(country)}>{country.country}</li>
+            {countries && countries.map((c, index) => (
+                <li key={index} onClick={() => handleClick(c)}>{c.country}</li>
             ))}
         </ul>
         <BackButton />
