@@ -13,7 +13,6 @@ const CountryList: React.FC = () => {
     const {continentId} = useParams<string>()
     const { dispatch } = useContext(CountryContext);
     const [countries, setCountries] = useState<CountriesbyContinent[]>()
-    console.log(countries)
     
     useEffect(() => {
         if(continentId){
@@ -26,12 +25,9 @@ const CountryList: React.FC = () => {
         setCountries(filteredCountries)
     }
 
-   
-
     function handleClick(selected: CountriesbyContinent){
-        console.log(selected)
         dispatch({type:'SET_SELECTED_COUNTRY', payload: selected.country})
-        window.scroll(0, 240);
+        window.scroll(0, 0);
     }
 
 

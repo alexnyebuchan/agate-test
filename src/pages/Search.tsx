@@ -11,6 +11,9 @@ import { CountryContext } from "../context/CountryContext"
 import styles from '../styles/Search.module.scss'
 import { CountriesByCapitol } from "../utils/Types"
 
+import continentData from '../data/byContinent.json'
+
+
 
 const Search: React.FC = () => {
     const { searchId } = useParams<string>()
@@ -26,12 +29,15 @@ const Search: React.FC = () => {
       }
     }, [searchId])
 
-    
+    function extractContinent(id: string) {
+      const continent = continentData.filter((country) => country.country === id)[0].continent
+      dispatch({type:'SET_SELECTED_CONTINENT', payload: continent})
+    }
 
-
-      function handleClick(selected: any){
+    function handleClick(selected: any){
         dispatch({type:'SET_SELECTED_COUNTRY', payload: selected.country})
-        window.scroll(0, 240);
+        window.scroll(0, 0);
+        extractContinent(selected.country)
     }
 
   return (
