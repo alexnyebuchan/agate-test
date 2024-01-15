@@ -12,9 +12,6 @@ import styles from '../styles/Search.module.scss'
 import { CountriesByCapitol } from "../utils/Types"
 import { extractContinent } from "../utils/Functions"
 
-
-
-
 const Search: React.FC = () => {
     const { searchId } = useParams<string>()
     const { dispatch } = useContext(CountryContext); 
