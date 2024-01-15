@@ -1,3 +1,6 @@
+@import './colours.module';
+
+
 .container {
     display: flex;
     justify-content: center;
@@ -5,4 +8,8 @@
 
 .map {
     width: 90%;
+}
+
+.selected {
+    fill: $blue;
 }

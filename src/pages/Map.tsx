@@ -10,7 +10,7 @@ import { extractContinent } from "../utils/Functions";
 
 
 const Map: React.FC = () => {
-  const { dispatch } = useContext(CountryContext);
+  const {  state, dispatch } = useContext(CountryContext);
 
   function handleClick (geo: any, _e:any) {
     dispatch({type:'SET_SELECTED_COUNTRY', payload: geo.properties.name})
@@ -23,7 +23,7 @@ const Map: React.FC = () => {
       <Geographies geography={features}>
         {({ geographies }) =>
           geographies.map((geo) => (
-              <Geography key={geo.rsmKey} geography={geo} onClick={(e) => handleClick(geo, e)} />
+              <Geography key={geo.rsmKey} geography={geo} onClick={(e) => handleClick(geo, e)} className={geo.properties.name === state.selectedCountry ? styles.selected : ''}/>
           ))
         }
       </Geographies>
