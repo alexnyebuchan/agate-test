@@ -27,7 +27,7 @@ function App() {
       {/* TODO Loading */}
         <Layout>
           <Routes>
-            <Route path="/*" element={<Navigate to="/continents" replace />}></Route>
+            <Route path="/*" element={<Navigate to="/map" replace />}></Route>
             <Route path="/map" element={<Map/>}></Route>
             <Route path={"/search/:searchId"} element={<Search/>}></Route>
             <Route path="/continents" element={<ContinentList/>}></Route>

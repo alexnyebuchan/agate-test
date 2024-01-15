@@ -20,7 +20,7 @@ const InfoBar: React.FC = () => {
 
   function getCapitol(id: string){
     const filteredForCapitol = capitolData.filter((c) => c.country === id)
-    if(filteredForCapitol[0].city) {
+    if(filteredForCapitol.length > 0 && filteredForCapitol[0].city) {
       setCapitol(filteredForCapitol[0].city)
     } else {
       setCapitol(`${country} has no capitol listed.`)

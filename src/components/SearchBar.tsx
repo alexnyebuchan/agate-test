@@ -7,13 +7,10 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-// Search through capitol data as it includes both country and capitol name. Any field. If anything is in the search bar, display the search page.
 const SearchBar: React.FC = () => {
   const [searchValue, setSearchValue] = useState('');
   const navigate = useNavigate();
   const {pathname} = useLocation();
-
-  
 
   useEffect(() => {
     if(!pathname.startsWith('/search/')){
@@ -26,7 +23,6 @@ const SearchBar: React.FC = () => {
         setSearchValue(value)
         navigateToSearch(value)
     }
-
 
   function navigateToSearch(searchId:string){
     if(searchId.length > 0){

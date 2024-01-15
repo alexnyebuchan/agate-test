@@ -14,7 +14,6 @@ const BackButton = () => {
         navigate('/')
       }
 
-
   return (
     <button className={styles.btn} onClick={handleReturn}>Home<FontAwesomeIcon className={styles.icon} icon={faRotateLeft} /></button>
   )
