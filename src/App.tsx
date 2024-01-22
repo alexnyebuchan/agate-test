@@ -10,8 +10,6 @@ import CountryList from './pages/CountryList'
 import { CountryContext } from "./context/CountryContext.tsx"
 import { CountryReducer}  from "./context/CountryReducer.tsx"
 
-
-
 function App() {
   const initialState = {
         selectedCountry: '',
